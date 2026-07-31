@@ -95,7 +95,7 @@ Libro activo: A Philosophy of Software Design — pp. 0/190 · Libros terminados
 | 🤝 Sesiones formales con Claude | 3 | 3 | | Requerimientos (mar) · interrogatorio (jue) · diseño SQL (sáb) |
 | 🛠️ Artefactos de Claude Code | 3 | 4 | | CLAUDE.md ×2 · skill · slash command |
 | 🎬 Videos con takeaways | 1 | 2 | | Modo bici |
-| 📊 Sesiones de Tableau | 2 | 2 | | **Mié · Vie** *(la de lun se perdió; no se apila)* |
+| 📊 Sesiones de Tableau | 2 | 2 | **1** | **Jue ✅ · Vie** *(las de lun y mié se perdieron)* |
 | 🧮 LeetCode | 3 | 3 | | Domingo |
 | 💾 Commits en `loop` | 10 | 15 | | Cierre diario |
 | 📰 Digest + 3 takeaways | 1 | 1 | | Jueves (bici) |
@@ -209,15 +209,13 @@ Sin estados intermedios. El orden importa: lo cognitivo duro va arriba.*
 - [ ] Abrir sesión nueva de Claude Code en `loop` y verificar que el contexto se aplicó **sin repetirlo**
 - [ ] Filtro final: pasar cada línea por *"¿un dev nuevo lo deduciría del repo en 5 min?"* Si sí → se borra
 
-### 🔲 Bloque 4 · E06 fase A — Tableau sesión 1 · 1.2 pom
-> ⏱️ 35 min. Desktop **Free Edition**. 🔒 Nada se publica.
-
-- [ ] Instalar Tableau Desktop Free Edition
-- [ ] Conectar Greenstone con tu cadena de conexión
-- [ ] Identificar en el panel: dimensiones vs medidas, filas vs columnas, marcas
-- [ ] Construir una vista simple: una serie de tiempo o un ranking
-- [ ] **Anotar la pregunta concreta** que el dashboard responderá el viernes
-- [ ] Elegir qué dashboard existente de Greenstone vas a replicar (tu ground truth)
+### 🟢 Bloque 4 · E06 fase A — Tableau sesión 1 · 1.2 pom → **real 2.0** ✅ *(+43%)*
+- [x] Conectado a Greenstone — **plan A, JDBC** · Custom SQL con la query de producción
+- [x] Extracto, no conexión viva · 33 campos · 305,141 filas
+- [x] Vista `Timing status` construida · guardada en `Documentos/Greenstone/Tableau/` · 🔒 nada se publicó
+- [x] **Hallazgos:** 27% de tickets no medibles (entrada manual, no error) · `Out of guard` ≈ 0.2% → datos limpios · piso físico en 6-10 min
+- [x] Pregunta escrita · referencia: **Load Times 2.0 (Luzmo)** → el viernes se reproducen **cifras**, no diseño
+- [ ] ⚠️ Buscar el `.hyper` del extract y confirmar que está fuera de iCloud — **ese sí tiene datos de la empresa**
 
 ### 🔲 Bloque 5 · Personal · 1.2 pom
 - [ ] Lectura 30 min — *A Philosophy of Software Design*, caps 1–2
@@ -432,13 +430,18 @@ y no se decida schema. · **Plan 6.0 escritorio + 2.4 bici** · real: ___
 - [ ] **H4 · query de subárbol** → **movida al viernes.** Afecta un índice, no el schema
 - [ ] **A1 · el engine global** *(no bloquea — es material del gate del domingo)*
 
-### 🔲 Bloque 2 · E03 fase E — Cerrar E03 · 1.0 pom
-- [ ] `adr-002-modelo.md` — qué cambió tras el interrogatorio, qué defendiste, por qué
-- [ ] `adr-003-fechas.md` — librería de fechas, ahora sí: depende de H3, ya resuelta
-- [ ] Actualizar `modelo-arturo.md` con H1–H4
-- [ ] Commit y push
-- [ ] ✅ **Cerrar E03** → generar **E05** con la skill `nueva-epica`
-> 📌 Segundo uso de la skill → **cierra el DoD de E02 fase C** (*"una skill que ya usé dos veces"*).
+### 🟢 Bloque 2 · E03 fase E — Cerrar E03 · 1.0 pom ✅
+- [x] `adr-002-modelo.md` — lo defendido sin cambios, los 3 cambios del interrogatorio, y H1/H2/H3
+- [x] `adr-003-fechas.md` — **Temporal** en el frontend, `zoneinfo` en el backend, `TZ=UTC` en el proceso
+- [x] `modelo-arturo.md` v3 — vista `records`, `usuarios.timezone`, `sesiones_pomodoro.tz`
+- [x] **E05 generada con la skill** → segundo uso · **cierra el DoD de E02 fase C**
+- [x] La skill detectó sola la contradicción entre el doc semanal y la spec sobre el parser
+- [ ] ⚠️ **Commit y push pendientes** en `loop` y `logbook`
+
+> 🔍 **Hallazgo del segundo uso de la skill:** cachó que el doc semanal decía "parser" y la spec §10
+> decía "no hay importador", y preguntó cuál gana en vez de elegir sola. También encontró que el DoD 3
+> de E05 estaba mal escrito — *"el leak aparece"* pasaba igual con falsos positivos; ahora dice
+> *"y nada más aparece con ellos"*. **Ese error era mío, no de los datos.**
 
 ### 🔲 Bloque 3 · Consolidación · 1.2 pom · **bloque nuevo**
 > Corrección al análisis del miércoles. **No es repaso pasivo:** doc de estudio en una ventana,
@@ -651,7 +654,15 @@ S4 (post-Tokio): **E08 comparar contra No Mistakes y decidir (~4 pom)**
 4. **Verificar la herramienta antes de agendarla.** El cask de E01 estaba mal en el doc y habría
    costado ~10 min del timebox de 30. Toda épica que dependa de software externo se verifica al
    generarse, no al ejecutarse. (27 jul)
-5. **Ejecutar no es registrar.** A–C corrieron en 1.0 pom y el log salió vacío: motor, trigger y
+5. **El mensaje de error dice qué tecnología falló — hay que leerlo completo.** Tableau decía
+   *"No suitable driver installed, **or the URL is incorrect**"*. "URL" es vocabulario de JDBC;
+   ODBC no habla de URLs. Se asumió ODBC y se instaló el driver equivocado. **Tableau en Mac usa
+   JDBC**, con el `.jar` en `~/Library/Tableau/Drivers`. (30 jul)
+6. **Aislar antes de arreglar.** El rodeo del driver no fue tiempo perdido porque `sqlcmd` descartó
+   red, credenciales y permisos de un golpe, dejando una sola variable viva. *Cuando algo dice "no
+   encuentro X" y sabes que X existe, la pregunta no es "¿está instalado?" sino "¿qué copia usa y
+   dónde la busca?"*. (30 jul)
+7. **Ejecutar no es registrar.** A–C corrieron en 1.0 pom y el log salió vacío: motor, trigger y
    tabla de errores sin anotar. La evidencia se escribe en el momento o no existe. (27 jul)
 ```
 
@@ -665,7 +676,7 @@ S4 (post-Tokio): **E08 comparar contra No Mistakes y decidir (~4 pom)**
 | D3 | ¿Claude Code instalado? | E02 fase A | lun 27 | ✅ **Sí, desde el 21 jun.** Sin `CLAUDE.md`, sin `commands/`, sin `agents/`, sin `skills/` — se escribe todo de cero |
 | D4 | Autoevaluación 1-5 por dominio: ¿conmigo o solo? | Retro dom 2 | mié 29 | ___ |
 | D5 | Semanas 26/29/30 de Apple Notes: ¿exportables o a mano? ¿en qué formato salen? | E05 fase B (parser, sáb) | **mar 28** (sesión de requerimientos) | ___ |
-| D6 | ¿La empresa tiene licencias de Tableau? Creator son $900/año, solo anual, y solo compran publicar a Cloud — no capacidad de análisis. Si la empresa tiene, es además donde deben vivir los datos de Greenstone | E06 a partir de S2 | vie 31 | ___ |
+| D6 | ¿La empresa tiene licencias de Tableau? | E06 a partir de S2 | vie 31 | 🔶 **Parcial (30 jul): la edición gratuita SÍ conecta a Azure SQL.** La limitante era el driver JDBC, no la licencia. Sigue abierta la parte de dónde deben vivir los datos de Greenstone |
 | D7 | ¿Hay acceso a las keys del eLearning de Tableau? (las comparte Sarvani en el learning path) | nada — es opcional | vie 31 | ___ |
 
 > D5 es la que más riesgo esconde: el parser del sábado se diseña el jueves en la bici. Si el formato
@@ -688,6 +699,12 @@ S4 (post-Tokio): **E08 comparar contra No Mistakes y decidir (~4 pom)**
 🔲 El grupo `dev` entra a la imagen de producción. Se separa con `--no-dev`
    el día del deploy (S3). Deuda consciente, documentada por el agente.
 🔲 `logbook/adr/` sigue vacío en git → se cierra con el primer ADR del programa.
+🔲 ODBC instalado sin necesidad para Tableau (msodbcsql18, mssql-tools18, unixodbc).
+   No estorba y `sqlcmd` es útil. No se desinstala. (30 jul)
+🔲 Anaconda y Homebrew con unixODBC compitiendo en el PATH. No afecta a Tableau
+   (usa JDBC), pero puede morder si algo de Python usa ODBC. (30 jul)
+🔴 SEGURIDAD: rotar la credencial `fronagbb1282b1_temp_ro` — se expuso en texto plano.
+   Y limpiar `~/.zsh_history`. (30 jul)
 ```
 
 ## 🚨 Banderas
@@ -711,6 +728,9 @@ S4 (post-Tokio): **E08 comparar contra No Mistakes y decidir (~4 pom)**
 | v1 | 25 jul 2026 | Creada. Primera semana real del programa. |
 | v2 | 25 jul 2026 | **Claude Code entra como E02** (6 pom) y las demás se recorren; **nada se recortó** — Tableau conserva sus 3 sesiones. El goal pasa a tener dos mitades: el artefacto y el método. La semana sube de ~38 a ~44 pom de escritorio y queda sin colchón. |
 | v3 | 25 jul 2026 | **Bici fija: martes y jueves, 2 h c/u = 9.6 pom seguros.** El ADR, el digest, la metodología y el diseño del parser se mueven ahí. Capacidad total ~53.6 pom. |
+| **v12.3** | **30 jul 2026** | Bloque 2 marcado: **E03 cerrada** con `adr-002`, `adr-003`, modelo v3 y E05 generada. Alineada la numeración de bloques entre `semana-01.md` y `dias/jueves-30-jul.md`, que habían divergido. **Bloque 3 (consolidación) sigue pendiente** y no estaba en la lista de faltantes. |
+| **v12.2** | **30 jul 2026** | **E06 fase A cerrada: 50 min reales contra 35 estimados (+43%).** Causa: el driver JDBC, prerrequisito no verificado — **segunda vez esta semana** (la primera fue el cask de OpenSuperWhisper el lunes). Va a la retro. Tres hallazgos reales sobre Greenstone. **El ejercicio del viernes cambió:** Load Times 2.0 vive en Luzmo, así que se reproducen cifras y se comparan herramientas, no se replica un diseño. El drill de Workout Wednesday se mueve a S2. |
+| **v12.1** | **30 jul 2026** | **Tableau conectado a Greenstone (plan A).** Hallazgo: **Tableau Desktop en Mac usa JDBC, no ODBC** — el `.jar` va en `~/Library/Tableau/Drivers`. El mensaje de error lo decía desde el principio ("or the URL is incorrect" es vocabulario de Java) y se leyó mal. **D6 parcialmente resuelta:** la edición gratuita sí conecta; la limitante era el driver, no la licencia. Dos lecciones nuevas y deuda técnica registrada, incluida una credencial de producción que hay que rotar. |
 | **v12** | **30 jul 2026** | **E03 cerrada.** `adr-002-modelo.md` y `adr-003-fechas.md` escritos, modelo v3 con H1-H3, **E05 generada con la skill** (segundo uso → cierra el DoD de E02 fase C). 🔴 **Corrección importante en E05 fase B: el seed usa la semana 15, no la 29.** S29 y S30 usan `*` sin corchetes y no tienen estado de completado — transcribirlas haría que todo se viera como leak. La S15 trae los leaks reales (Apex Lab ×5, Insights ×6) con completados alrededor. Eliminadas las menciones a "parser" e "importar" del goal, T2 y día 6: `spec-v1.md` §10 las supersede. |
 | **v11.4** | **30 jul 2026** | Revertido: **los nueve temas y el examen de 35 se hacen hoy**, no tres temas y el examen el domingo. Decisión de Arturo. El material son ~2h15 contra 1h de bici; lo que no quepa se termina en escritorio. |
 | **v11.3** | **30 jul 2026** | Bici del jueves ajustada: **estudio tema por tema** (leer → cerrar el doc → contestar a ciegas) en vez del examen completo. Nueve temas no caben en una hora, y un examen con 25 blancos no enseña. Se cubren los tres que solo se aprobaron el miércoles: Docker, servidor web y SQLAlchemy. **El examen de 35 se reserva para el domingo** como preparación de los gates. |
