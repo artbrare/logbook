@@ -90,7 +90,7 @@ Libro activo: A Philosophy of Software Design — pp. 0/190 · Libros terminados
 | 🍅 Pom ingeniería (sin Tableau) | 26 | 29.5 | | Días 1–7, primer bloque del día |
 | 🍅 Pom totales escritorio | 41 | 44.3 | | Ingeniería + Tableau + lectura + cierres |
 | 🚴 Pom modo bici | 8 | 9.6 | | **Mar y jue fijos, 2 h c/u** |
-| 📖 Sesiones de lectura | 5 | 7 | | Slot de 30 min |
+| 📖 Sesiones de lectura | 5 | 7 | **2** ⚠️ | Slot de 30 min · **lun ❌ mar ✅ mié ✅ jue ❌** |
 | 📄 Páginas (APoSD) | 60 | 80 | | Mismo slot |
 | 🤝 Sesiones formales con Claude | 3 | 3 | | Requerimientos (mar) · interrogatorio (jue) · diseño SQL (sáb) |
 | 🛠️ Artefactos de Claude Code | 3 | 4 | | CLAUDE.md ×2 · skill · slash command |
@@ -217,305 +217,116 @@ Sin estados intermedios. El orden importa: lo cognitivo duro va arriba.*
 - [x] Pregunta escrita · referencia: **Load Times 2.0 (Luzmo)** → el viernes se reproducen **cifras**, no diseño
 - [ ] ⚠️ Buscar el `.hyper` del extract y confirmar que está fuera de iCloud — **ese sí tiene datos de la empresa**
 
-### 🔲 Bloque 5 · Personal · 1.2 pom
-- [ ] Lectura 30 min — *A Philosophy of Software Design*, caps 1–2
-- [ ] Registro diario · hábitos · suplementos
-- [ ] Entrenos del día
-
-### 🔲 Bloque 6 · Cierre · 0.4 pom
-- [ ] Llenar pom reales por bloque y el análisis del día
-- [ ] Marcar checkboxes
-- [ ] `git commit` del día
-
-> 🔍 **Análisis del día:** E01 cerrada bajo timebox (1.0 vs 1.2) y dos repos en pie con commits limpios.
-> **El bloque duro arrancó a las 23:30** — violación directa del compromiso #2 ("lo sagrado va primero").
-> Deriva de tiempo: 5 intercambios nombrando un repo privado, trabajo cómodo desplazando al incómodo.
-> Es el leak documentado operando en día 1. **Corrección: el bloque 1 del martes es CLAUDE.md, antes de todo.**
-> Slip: 4.5 pom — CLAUDE.md ×3, Tableau sesión 1, lectura.
-
----
-
-## Día 2 — MAR 28 JUL · Requerimientos y primeras herramientas
-**Foco:** saber qué es Loop, y construir la primera herramienta reutilizable.
-**Plan 6.6 escritorio + 2.4 bici** · **real ~9.4** ✅ *(confirmar minutos exactos en el cierre)*
-> ⚠️ **Bici recortada a 1 h** (2.4 pom, no 4.8). Cae el dictado de notas del modelo — se recupera
-> el miércoles, que es su bloque natural. **Prioridad si el día se aprieta: bloques 1, 2 y 5.**
-> El bloque 3 es el primero que se mueve al miércoles.
-
-### 🟢 Bloque 1 · CLAUDE.md global · 0.6 pom → **real ___** ✅
-> Deuda de ayer, pagada primero. **Hallazgo:** Arturo nunca había usado Claude Code en serio,
-> así que no hay fricciones documentadas. El archivo sale como **v0 con defaults marcados a prueba**,
-> no como reglas inventadas. La sección *Fricciones observadas* queda vacía a propósito y se
-> alimenta en el momento en que algo moleste — no al final del día.
-
-- [x] `~/.claude/CLAUDE.md` creado *(la carpeta ya existía; solo faltaba el archivo)*
-- [x] Contexto · Cómo respondes · Nunca · Porque estoy aprendiendo · Fricciones (vacía)
-- [x] **Validado en sesión nueva:** recitó las reglas sin que se las repitiera
-- [ ] 📌 Revisar en 2 semanas: borrar los defaults 🔵 que no hayan servido
-
-### 🟢 Bloque 2 · E03 fase A — Requerimientos · 2.0 pom ✅
-- [x] **D5 respondida:** 4 semanas reales (12, 15, 29, 30). Dos formatos distintos; S29-S30 sin estado de completado — bloquea el parser del sábado
-- [x] Inventario honesto del sistema actual: qué funciona, qué falla, con evidencia de las semanas 26/29/30
-- [x] Los 4 tipos de task: hábito · one-off · contador semanal · meta
-- [x] Categorías anidadas (**3 niveles, no 2**), pesos y scoring
-- [x] Leaks con **4 salidas** · la 4ª es reagendar al primer bloque
-- [x] 🚫 NO-features · **el importador sale sin fecha de reingreso**
-- [x] `spec-v1.md` commiteada (a58d8fd)
-
-### 🟢 Bloque 3 · E02 fase C — Skill · ~2.0 pom ✅
-- [x] Leída la doc de Skills
-- [x] **Skill `nueva-epica`** en `logbook/.claude/skills/` — se activó sola y generó **E04**
-- [x] Usada 1 de las 2 veces que pide el DoD · la 2ª será E05 el jueves
-- [x] 📌 **Hallazgo:** los slash commands se fusionaron con skills. `commands/x.md` y `skills/x/SKILL.md` producen el mismo `/x`; el frontmatter controla quién invoca. **Ya no son dos primitivas** — el gate del domingo cambia de pregunta.
-
-### 🟢 Bloque 3b · Infraestructura · ~1.2 pom ✅
-- [x] **GitHub:** `logbook` y `loop` creados privados y pusheados
-- [x] `logbook/CLAUDE.md` — convenciones, umbral de épica, reparto de ADRs
-- [x] `loop/CLAUDE.md` — stack de ADR-001, principio multiusuario, frontera ORM/Core
-- [x] `.gitignore` de `loop` extendido a Python + `.env`
-
-### 🟢 Bloque 4 · Personal · 1.2 pom ✅
-- [x] Lectura 30 min — APoSD caps 1–2
+### ⬛ Bloque 5 · Personal · 1.2 pom
+- [ ] ❌ **Lectura NO se hizo** — segundo día de la semana. Ver bandera abajo
 - [ ] Registro · hábitos · entrenos
 
-### 🟢 Bloque 5 · 🚴 BICI · 2.0 pom reales ✅
-**5a · E01 fase D — validación · ~0.3 pom**
-- [x] ⌥ alcanzable pedaleando y encontrado a ciegas
-- [x] **A/B Whisper vs Parakeet:** 4 errores cada uno. **Whisper gana por puntuación** — Parakeet no puso ninguna
-- [x] Alucinación **reproducida**: 30 s de silencio → repitió la última frase 3 veces
-- [x] **Con disciplina de tap-off, cero frases inventadas en el dictado real** → la mitigación funciona
-
-**5b · E03 fase C — ADR-001 · ~1.7 pom**
-- [x] Dictado completo. **Creció de 4 a 6 decisiones** durante la sesión
-- [x] Whisper falla solo en sustantivos técnicos; la prosa en español salió limpia
-
-⬛ **5c · Metodología P→I→V — no se hizo.** El ADR ocupó la hora completa. Reasignación consciente al entregable que bloquea el miércoles, no slip.
-
-### 🔲 Bloque 6 · Cierre · 0.4 pom
-- [x] Transcripción revisada: 4 palabras por párrafo (solo jerga técnica), **cero frases inventadas** en dictado real
-- [x] **E04 generada** por la skill
-- [ ] Confirmar poms reales por bloque
-- [ ] Commit y push en los dos repos
-
-> 🔍 **Análisis del día:** El bloque 1 (deuda de ayer) arrancó primero — corrección aplicada, y el
-> día pasó de 2.0 a 4.6 pom. **La diferencia no fue esfuerzo: fue el orden.**
-> **Tres decisiones de arquitectura en un día:** fuera Next.js → API separada → backend en Python.
-> Las tres defendibles, pero el ADR-001 pasó de 4 a 6 decisiones y consumió la bici entera.
-> **El stack ya no se toca esta semana.**
-> Hallazgo que corrige el programa: *Python de servidores* (Flask, nginx, deploy) no estaba cubierto
-> en ninguna fase — S12-S15 es Python de datos. Era un hueco real, no un adelanto.
-
----
-
-## Día 3 — MIÉ 29 JUL · El modelo y el plan
-**Foco:** el entregable más importante de la semana, hecho solo. · **Plan 7.2 pom** · **real 10.0** ✅ *(+39%)*
-> ✂️ **Corte aplicado al arrancar:** Tableau sesión 2 salió (8.8 → 7.2) porque E04 se re-estimó
-> de 2.8 a 4.5 pom. Se decidió antes de empezar, no a media tarde.
-
-### 🟢 Bloque 1 · E03 fase B — Modelo de datos · 1.6 pom · 🚫 SIN CLAUDE ✅
-- [x] Entidades, campos y relaciones — 7 tablas
-- [x] **P1 contador semanal** → resuelto quitando objetivos semanales (D5)
-- [x] **P2 recurrencia** → `tareas_programadas` (la regla, sin fecha) vs `registros_diarios` (el hecho)
-- [x] **P3 dónde vive el peso** → en la tarea. *"La dificultad no es propiedad de la tarea, es propiedad de la tarea en un momento"*
-- [x] **P4 recálculo del histórico** → el peso se copia al registro; el pasado no se reescribe
-- [x] **P5 duración y hora fija** → no se agregan. Insights por IA, no planificador rígido
-- [x] **P6 no se hizo vs no había dato** → `status` enum de 3 estados
-- [x] **P7 `user_id` e índices** → `(usuario_id, fecha)`, igualdad antes que rango
-- [x] Anidamiento de 3 niveles con CHECK · contadores >100% permitidos
-- [x] `docs/modelo-arturo.md` escrito
-
-### 🟢 Bloque 2 · E03 fase D — Interrogatorio · 1.0 pom · 🤝 adelantado del jueves ✅
-- [x] 8 decisiones difíciles con formato completo (problema · opciones · decisión · qué pierdo · qué lo revertiría)
-- [x] **Tres cambios por argumento:** FK `tarea_programada_id` nullable · `boolean` → `status` enum · objetivos semanales fuera
-- [x] 4 huecos nombrados: H1 derivar vs escribir · H2 validar `sesiones_pomodoro` · H3 zonas horarias · H4 query de subárbol
-> La fase D de mañana baja de 2.2 a 1.2 pom.
-
-### 🟢 Bloque 3 · E04 fase B — Scaffold en plan mode · 2.5 pom ✅
-- [x] `docs/plan-scaffold-arturo.md` escrito ANTES de abrir plan mode — 8 decisiones + **14 preguntas abiertas**
-- [x] **Vuelta 1:** prompt de 4 palabras → plan de nivel senior *(el dato, ver bloque 5)*
-- [x] **Vuelta 2:** con el plan propio como contexto → 4 correcciones aplicadas
-- [x] `web/` Vite + React + TS · `api/` Flask con factory, blueprint, `/health` y `/health/ready`
-- [x] SQLAlchemy: engine global, sesión por request, cierre en `teardown_appcontext`
-- [x] CORS a mano en `after_request` — sin librería
-- [x] Alembic cableado a `app.config`, cero migraciones
-- [x] Frontend pinta `/health` → **`api: ok`** · consola sin errores de CORS
-- [x] 6 tests pasan · marker separa unit de integración
-
-**Las 4 correcciones que salieron de tu criterio, no del repo:**
-```
-D3  requirements.txt → pyproject.toml + uv.lock
-D5  una clase Config → clases por ambiente
-D4  /health/db → /health/ready (convención liveness/readiness de k8s)
-CORS  flask-cors → headers a mano en after_request
-```
-
-### 🟢 Bloque 4 · E04 fase C — Contenedores y persistencia · 1.0 pom ✅
-- [x] `Dockerfile` a mano: `COPY pyproject.toml uv.lock` **antes** del código · usuario no-root · gunicorn en `0.0.0.0:8000`
-- [x] `compose.yml` con **volumen nombrado** `loop_pgdata` y `healthcheck` + `depends_on: service_healthy`
-- [x] `/health` responde 200 desde el contenedor
-- [x] 🔒 **Persistencia verificada:** fila insertada → `make down && make up` → la fila sigue ahí
-- [x] Liveness vs readiness probado apagando Postgres: `/health` 200, `/health/ready` 503, vuelve a 200
-- [x] `loop/CLAUDE.md` con estructura real, tabla de comandos y hueco de auth
-
-### 🟢 Bloque 5 · E02 fase B — El dato de plan mode · 0.5 pom ✅
-- [x] **EL DATO:** un prompt de **4 palabras** ("haz el scaffold de loop") produjo un plan de nivel senior — citando `CLAUDE.md`, `spec-v1.md`, `adr-001-stack.md` y `modelo-arturo.md` por sección, verificando que el puerto 5000 está ocupado en esta Mac, y proponiendo `repositories/` vs `queries/` para volver física la regla ORM/Core.
-- [x] **Conclusión que sostiene la metodología del semestre:** el apalancamiento no está en escribir prompts largos, está en **el contexto persistente del repo**. El trabajo de lunes y martes se pagó el miércoles, medido.
-- [x] Lo que el contexto NO podía saber salió del plan propio: las 4 correcciones de arriba
-- [ ] ⏭️ **ADR-003 (librería de fechas)** pasa al jueves — depende de H3 (zonas horarias), sin resolver
-
-### ⬛ Bloque 6 · Tableau sesión 2 — CORTADO
-> Salió al arrancar el día por la re-estimación de E04. **La semana cierra en 2/3 de Tableau.**
-
-### 🟢 Bloque 7 · Personal + cierre · 1.6 pom ✅
-- [x] Lectura 30 min — APoSD caps 3–4
-- [x] Registro · hábitos · entrenos
-- [x] 10 commits por pieza + push en los dos repos
-- [x] CORS verificado: `CORS_ORIGINS` es lista, no string. Sin bug de substring
-- [x] Poms reales: **10.0**
-
-> 🔍 **ANÁLISIS DEL DÍA**
-> **Productivo, pero sin consolidación.** Arturo lo reporta así: *"bastante productivo, solo creo
-> no hubo mucho aprendizaje ya que los conceptos son muy complejos para mí"*. El diagnóstico es
-> correcto y hay que separarlo en dos: **el modelo de datos sí se aprendió** (se diseñó solo,
-> se defendió, se cambiaron tres decisiones por argumento). **La infraestructura no** — se aprobó,
-> no se construyó, y son ~9 conceptos nuevos en un día: contenedores, capas, volúmenes, app factory,
-> blueprints, WSGI, engine/sesión, CORS, migraciones.
->
-> **Causa raíz: la culpa es del plan, no de la comprensión.** El miércoles metía el modelo de datos
-> Y el scaffold completo Y los contenedores. Nueve conceptos nuevos no se consolidan el mismo día
-> que se ven, sin importar quién los vea.
->
-> **Desviación de estimado: +39%** (7.2 → 10.0). Segunda medición del programa.
->
-> **Corrección concreta:** se generó `logbook/estudio/semana-01.md` con los 9 temas explicados
-> desde cero y ~60 preguntas de recall. **El jueves en la bici se repasa, no se agrega material
-> nuevo.** Los gates del domingo miden si funcionó.
-
----
-
-## Día 4 — JUE 30 JUL · Cerrar el diseño y consolidar
-**Foco:** cerrar E03 con las decisiones abiertas resueltas, para que el viernes se escriba schema
-y no se decida schema. · **Plan 6.0 escritorio + 2.4 bici** · real: ___
-> 📄 Detalle completo en `logbook/dias/jueves-30-jul.md`
-> 🔄 **Replanificado:** el interrogatorio del modelo se adelantó al miércoles, así que la fase D baja
-> de 2.2 a 1.0. Entra un bloque nuevo de **consolidación** como corrección al análisis del miércoles
-> (~17 conceptos nuevos en un día, sin tiempo de fijarlos). Tableau entra: es deuda del lunes.
-
-### 🔲 Bloque 1 · Decisiones abiertas · 1.0 pom · 🤝 conmigo
-> Tres de las cuatro **bloquean el viernes**. Sin ellas el schema se escribe a ciegas.
-
-- [x] **H1 · `no_completado` se DERIVA, no se escribe** → `pendiente` + `fecha < hoy`
-  > **Razón de Arturo:** es una línea, no cuesta nada, y se autocorrige — una tarea que se olvidó
-  > de actualizar queda resuelta sola sin importar cuánto tiempo pase. Sin job, sin cron, sin infra.
-  > **Qué cuesta:** toda query que filtre por estado tiene que incluir la derivación. `WHERE status
-  > = 'no_completado'` no funciona solo. **Mitigación: la derivación se escribe UNA vez en una vista**,
-  > y todas las queries leen de la vista, no de la tabla.
-  > ⚠️ **Depende de H3:** "fecha < hoy" — ¿hoy según qué zona horaria?
-- [x] **H2 · `sesiones_pomodoro` ENTRA al schema**
-  > **Razón de Arturo:** se necesita trackear a qué hora se trabajó, y **hacerlo al principio es
-  > mejor que hacerlo al final.** El argumento fuerte detrás de eso: el schema se puede migrar
-  > después, pero **los datos que no capturas hoy no se pueden reconstruir.** Si arrancas con un
-  > contador, los meses de historia sin horas se pierden para siempre.
-  > **Qué cuesta:** una escritura por pomodoro en vez de un incremento · será la tabla más grande
-  > de la base · obliga a que la UI tenga "empezar pomodoro", no solo "marcar hecho".
-  > **Consecuencia:** `num_pomodoros_terminados` no existe — se cuenta desde esta tabla.
-- [x] **H3 · instante + zona IANA + fecha civil local**
-  > `usuarios.timezone` (IANA) · `registros_diarios.fecha` = fecha **local** del usuario ·
-  > `sesiones_pomodoro.inicio` (timestamptz) + `tz` (IANA al momento).
-  > **Por qué:** `timestamptz` guarda el instante pero **no recuerda dónde ocurrió**, y lo que
-  > importa es *"a las 5am aquí o en China es el mismo hábito"*. Zona IANA y no offset, porque
-  > `dias_repeticion` son reglas a futuro y los horarios de verano mueven el offset.
-  > **La zona se copia al evento**, mismo patrón que el peso: cambiar el perfil no reinterpreta el pasado.
-  > ⚠️ **Corrige H1:** `fecha < (now() AT TIME ZONE u.timezone)::date`, no `CURRENT_DATE`.
-- [ ] **H4 · query de subárbol** → **movida al viernes.** Afecta un índice, no el schema
-- [ ] **A1 · el engine global** *(no bloquea — es material del gate del domingo)*
-
-### 🟢 Bloque 2 · E03 fase E — Cerrar E03 · 1.0 pom ✅
-- [x] `adr-002-modelo.md` — lo defendido sin cambios, los 3 cambios del interrogatorio, y H1/H2/H3
-- [x] `adr-003-fechas.md` — **Temporal** en el frontend, `zoneinfo` en el backend, `TZ=UTC` en el proceso
-- [x] `modelo-arturo.md` v3 — vista `records`, `usuarios.timezone`, `sesiones_pomodoro.tz`
-- [x] **E05 generada con la skill** → segundo uso · **cierra el DoD de E02 fase C**
-- [x] La skill detectó sola la contradicción entre el doc semanal y la spec sobre el parser
-- [ ] ⚠️ **Commit y push pendientes** en `loop` y `logbook`
-
-> 🔍 **Hallazgo del segundo uso de la skill:** cachó que el doc semanal decía "parser" y la spec §10
-> decía "no hay importador", y preguntó cuál gana en vez de elegir sola. También encontró que el DoD 3
-> de E05 estaba mal escrito — *"el leak aparece"* pasaba igual con falsos positivos; ahora dice
-> *"y nada más aparece con ellos"*. **Ese error era mío, no de los datos.**
-
-### 🔲 Bloque 3 · Consolidación · 1.2 pom · **bloque nuevo**
-> Corrección al análisis del miércoles. **No es repaso pasivo:** doc de estudio en una ventana,
-> código en otra, y por cada concepto se busca **la línea real en el repo**.
-
-- [ ] **Tema 4 · Docker** → `api/Dockerfile` y `compose.yml`: capas, `--bind 0.0.0.0`, volumen nombrado
-- [ ] **Tema 5 · Servidor web** → `api/app/__init__.py`: factory, blueprint, los dos hooks
-- [ ] **Tema 6 · SQLAlchemy** → `api/app/db.py`: engine (una vez) vs sesión (por request), `close()` sin `commit()`
-- [ ] Anotar **qué concepto no se encontró en el código** — ese es el que no se entendió
-
-### 🔲 Bloque 4 · E06 fase A — Tableau sesión 1 · 1.2 pom · **deuda del lunes**
-> Desktop **Free Edition** · 🔒 guardado local, nunca se publica
-
-- [ ] Conectar **Greenstone** con la cadena de conexión
-- [ ] Identificar dimensiones vs medidas, filas vs columnas, marcas
-- [ ] Construir una vista simple: serie de tiempo o ranking
-- [ ] **Anotar la pregunta concreta** que el dashboard responderá
-- [ ] Elegir qué dashboard de Greenstone replicar — tu ground truth
-- [ ] Anotar qué se aprendió *(sesión sin nota no cuenta)*
-
-### 🔲 Bloque 5 · Personal · 1.2 pom
-- [ ] Lectura 30 min — APoSD
-- [ ] Registro · hábitos · entrenos
-
-### 🔲 Bloque 6 · 🚴 Estudio completo + examen
-> **Los nueve temas con sus preguntas, y el examen de 35 el mismo día.** Decisión de Arturo.
-> Ciclo por tema: leer → **cerrar el doc** → contestar dictando → comparar → anotar lo que falló.
-
-- [ ] Temas 1-9 leídos, cada uno con sus preguntas contestadas a ciegas
-- [ ] **Examen de 35 preguntas** de corrido, sin abrir la rúbrica hasta terminar
-- [ ] Comparar contra la rúbrica y contar aciertos
-- [ ] Lectura APoSD
-- [ ] Mandar las respuestas → dirigen el bloque de consolidación
-
-> ⏱️ ~2h15 de material contra 1h de bici. Lo que no quepa pedaleando se termina en escritorio.
+### 🟢 Bloque 6 · 🚴 BICI — estudio · 2.4 pom ✅
+- [x] **Temas 1, 2 y 3** del doc de estudio: bases de datos · reglas vs hechos · índices
+- [x] Preguntas de los temas 1 y 2 contestadas y revisadas → **11 de 15 completas**
+- [ ] Preguntas del tema 3 — sin revisar todavía
+> 📌 **Patrón detectado en la revisión:** los mecanismos están, faltan **los nombres y los costos**.
+> En el gate, *"lo elegí porque X"* sin *"y me cuesta Y"* cuenta como media respuesta.
+> **Ejercicio para los temas que siguen: por cada decisión, decir también qué cuesta.**
 
 ### 🔲 Bloque 7 · Cierre · 0.4 pom
-- [ ] Poms reales + análisis del día
+- [ ] Poms reales por bloque
+- [x] E05 existe — el viernes arranca de ahí
 - [ ] Commit y push en los dos repos
-- [ ] Verificar que **E05 existe** — el viernes arranca de ahí
 
-> 🔍 **Análisis del día:** {…}
+**Plan 8.4 (6.0 escritorio + 2.4 bici)** · **real 10.0** *(+19%)*
+```
+Bloque 1 · decisiones ····· 1.0 est
+Bloque 2 · cerrar E03 ····· 1.0 est
+Bloque 3 · consolidación ·· ⬛ NO SE HIZO → deuda al viernes
+Bloque 4 · Tableau ········ 1.2 est · 2.0 real  (+43%)
+Bloque 5 · lectura ········ ⬛ NO SE HIZO
+Bloque 6 · bici estudio ··· 2.4 est
+Bloque 7 · cierre ········· 0.4 est
+                            ─────────────
+                            10.0 pom reales
+```
+
+**Acumulado de la semana: 31.4 pom en 4 días** (lun 2.0 · mar 9.4 · mié 10.0 · jue 10.0).
+
+> 🔍 **ANÁLISIS DEL DÍA**
+> **Día de diseño cerrado.** Las tres decisiones que bloqueaban el viernes quedaron resueltas con
+> razón propia, E03 cerró con dos ADRs, y **E05 la generó la skill** — segundo uso, que cierra el
+> DoD de E02 fase C.
+>
+> **Lo más valioso no fue un artefacto, fue una detección.** La skill cachó que el doc semanal y
+> la spec se contradecían sobre el parser, y que **el DoD 3 de E05 estaba mal escrito** —
+> *"el leak aparece"* pasaba igual con falsos positivos. Ese error era de diseño del criterio,
+> no de datos, y lo encontró la herramienta.
+>
+> **⚠️ Patrón que se repite: prerrequisito no verificado, segunda vez esta semana.**
+> Lunes el cask de OpenSuperWhisper (~10 min). Hoy el driver de Tableau (+43%, y era JDBC, no ODBC —
+> el mensaje de error lo decía desde el primer intento). La lección 4 está escrita desde el lunes
+> como principio y volvió a pasar. **En la retro se convierte en checkbox de prerrequisito.**
+>
+> **Dos slips:** el bloque de consolidación y la lectura.
+>
+> **⚠️ Y la lectura ya es un patrón, no un incidente.** Va 2 de 4 días (lun ❌ · mar ✅ · mié ✅ · jue ❌).
+> La cuota es 5 de 7 como piso, así que **los tres días que quedan tienen que salir completos**.
+> Y aplica tu propia lección 3: *una cuota que no se alcanza se vuelve ruido en tres semanas*.
+> El libro además tiene deadline real — APoSD se termina en Tokio, del 16 al 28 de agosto.
+>
+> **Nota de ritmo:** 10.0 pom es el segundo día seguido en dos dígitos. La capacidad no es el
+> problema; **la lectura no se cae por falta de tiempo, se cae por posición** — siempre está al
+> final del día. Es exactamente la salida #4 de tu propio detector de leaks: reagendar al primer
+> bloque. Aplicártela a ti mismo es la prueba más barata de que el mecanismo sirve.
 
 ---
 
 ## Día 5 — VIE 31 JUL · El modelo deja de ser papel
-**Foco:** schema corriendo contra Postgres. · **Plan 6.2 pom** · real: ___
-*Subtasks finas se llenan el jueves: dependen del modelo y del ORM, que aún no existen.*
+**Foco:** que el schema exista y corra. **Es el día que desbloquea el sábado.**
+**Plan 8.6 escritorio** · real: ___
+> 📄 Detalle completo en `logbook/dias/viernes-31-jul.md`
+> 🔴 **Prioridad absoluta: bloques 1 y 2.** Si el schema y la migración no salen hoy, el sábado
+> —que es el día que decide el goal— arranca construyendo en vez de consultando.
+> **Deuda que entra del jueves:** el bloque de consolidación.
 
-### 🔲 Bloque 1 · E05 fase A — Schema v0 · 2.0 pom
-- [ ] 🚨 **La PRIMERA línea de la migración: `CREATE EXTENSION IF NOT EXISTS vector`**
-  > **Por qué, y no se puede olvidar.** El scaffold del miércoles probó que `pgvector` está en la
-  > imagen y **luego borró la extensión a propósito**. Si la base de desarrollo tiene estado que
-  > ninguna migración produjo, la migración funciona local y **falla en una base limpia** — o en
-  > producción, o en el clon de otra persona. Paridad dev/prod: la migración crea la extensión.
-- [ ] Traducir el modelo defendido a schema — `docs/modelo-arturo.md` es la fuente
-- [ ] Nombres de tablas y columnas en **inglés** (`users`, `scheduled_tasks`, `completed_at`)
-- [ ] Decidir **H2**: ¿entra `sesiones_pomodoro` al schema? Es propuesta de Claude, no diseño propio
-- [ ] Decidir **H1**: `no_completado` se escribe con un job, o se deriva (`pendiente` + `fecha < hoy`)
+### 🔲 Bloque 1 · E05 fase A — Schema v0 · 2.0 pom · **PRIMERO DEL DÍA**
+- [ ] 🚨 **`CREATE EXTENSION IF NOT EXISTS vector` como primera operación de la migración**
+- [ ] Tabla de equivalencias español → inglés: `users` · `categories` · `scheduled_tasks` · `daily_records` · `pomodoro_sessions` · `daily_reports` · `weekly_reports`
+- [ ] Un archivo por modelo en `api/app/models/` — **e importarlos TODOS en `__init__.py`**
+- [ ] Tipos no obvios: `uuid` · los 2 enums · `smallint[]` · `timestamptz` vs `date` · `numeric(5,2)`
+- [ ] Restricciones: `CHECK` de nivel 1-3, `CHECK` de peso 1-5, los 2 `UNIQUE`, `NOT NULL` en cada `user_id`
+- [ ] Los 5 índices declarados en los modelos, no a mano en la migración
+- [ ] ⛔ **`embedding` NO entra** — sin generador, un `NOT NULL` bloquea el seed. Deuda a S2
 
-### 🔲 Bloque 2 · E05 fase A2 — Migración · 1.4 pom
-- [ ] Primera migración corriendo contra Postgres local
-- [ ] Verificar que las tablas existen y commitear
+### 🔲 Bloque 2 · E05 fase A2 — Primera migración · 1.4 pom
+- [ ] `make revision` y **leer la migración generada completa antes de aplicarla**
+- [ ] A mano: `CREATE EXTENSION`, los `CREATE TYPE` si no salieron, y **la vista `records`** con `op.execute()`
+- [ ] `make migrate` · verificar con `\dt`, `\d daily_records`, `\dv`
+- [ ] **Probar el `downgrade` una vez** — si no baja, no es reversible y se sabe hoy
+- [ ] Commit: modelos y migración **juntos**
 
-### 🔲 Bloque 3 · E06 fase C — Tableau sesión 3 · 1.2 pom
-- [ ] Layout con contenedores — ref. WW **2020 W53**
-- [ ] Componer 2-3 vistas + un filtro o acción
-- [ ] **Guardar local (.twbx)** y anotar la ruta
-- [ ] 3 líneas: qué pregunta responde y qué te sorprendió del dato
+### 🔲 Bloque 3 · Consolidación · 1.2 pom · 🔴 **DEUDA DEL JUEVES**
+- [ ] Doc de estudio en una ventana, **código en otra**
+- [ ] Tema 4 Docker → `Dockerfile` y `compose.yml` · Tema 6 → `app/__init__.py` · Tema 7 → `db.py`
+- [ ] Anotar qué concepto **no encontraste** en el código
 
-### 🔲 Bloque 4 · Personal + cierre · 1.6 pom
+### 🔲 Bloque 4 · E06 fase B — Tableau sesión 2 · 1.2 pom
+- [ ] Abrir **Load Times 2.0 en Luzmo** y anotar 3-5 números concretos
+- [ ] Reproducir **esas cifras** en Tableau — no el diseño
+- [ ] ⭐ **La pregunta clave:** ¿cómo trata Luzmo los 82,737 "Not timed"?
+- [ ] Anotar la comparación: qué fue más fácil en cada herramienta, qué número no coincidió
+
+### 🔲 Bloque 5 · 📰 Digest de vanguardia · 1.2 pom
+- [ ] Digest de AI engineering, ecosistema Claude, backend/infra/data
+- [ ] **3 takeaways escritos** *(sin takeaways no cuenta)*
+
+### 🔲 Bloque 6 · Personal + cierre · 1.6 pom
 - [ ] Lectura 30 min · registro · entrenos
-- [ ] Cierre: log + commit + checkboxes
-- [ ] 📞 Preguntar D6 (licencias Tableau) y D7 (keys eLearning)
+- [ ] 📞 **D6** licencias de Tableau · **D7** keys del eLearning
+- [ ] 🔴 **Rotar la credencial expuesta** de `fronagbb1282b1_temp_ro` + limpiar `~/.zsh_history`
+- [ ] 🔍 Ubicar el `.hyper` del extract y confirmar que **no** está en iCloud
+- [ ] Cierre: poms reales, análisis, commit y push
+
+### 🚴 Opcional · Bici — estudio temas 4-7
+- [ ] Docker · Puertos y redes · Servidores web · Transacciones
+> Temas 8-10 el sábado. **El examen de 35 se hace el domingo.**
 
 > 🔍 **Análisis del día:** {…}
 
@@ -716,8 +527,14 @@ S4 (post-Tokio): **E08 comparar contra No Mistakes y decidir (~4 pom)**
   dice "existe una skill que ya usé dos veces". Notas sin artefactos = épica fallida.
 - Riesgo #4: que la query de score se genere en vez de escribirse. Si sale de un prompt, la
   capacidad de la semana no se adquirió aunque el checkbox esté verde.
-- Riesgo #5 (NUEVO): la semana no tiene colchón (53.9 pom de 53.9 de capacidad). Un día perdido
-  no se recupera: se paga recortando Tableau, nunca el modelo ni la query.
+- Riesgo #5: la semana no tiene colchón. Un día perdido no se recupera: se paga
+  recortando Tableau, nunca el modelo ni la query.
+- 🚨 Riesgo #6 (NUEVO, 30 jul): **la LECTURA va 2/4 y la cuota piso es 5/7.** Necesita
+  3 de 3 en los días que quedan. Causa raíz: está al final del día, no al principio.
+  Es el mismo leak de posición que Loop existe para detectar.
+- 🚨 LEAK CONFIRMADO: **prerrequisito no verificado, 2 de 2 veces** (cask lunes, driver jueves).
+  La lección 4 está escrita como principio desde el lunes y volvió a pasar. → en la retro
+  se convierte en CHECKBOX del prerrequisito de toda épica con software externo.
 ```
 
 ---
@@ -728,6 +545,8 @@ S4 (post-Tokio): **E08 comparar contra No Mistakes y decidir (~4 pom)**
 | v1 | 25 jul 2026 | Creada. Primera semana real del programa. |
 | v2 | 25 jul 2026 | **Claude Code entra como E02** (6 pom) y las demás se recorren; **nada se recortó** — Tableau conserva sus 3 sesiones. El goal pasa a tener dos mitades: el artefacto y el método. La semana sube de ~38 a ~44 pom de escritorio y queda sin colchón. |
 | v3 | 25 jul 2026 | **Bici fija: martes y jueves, 2 h c/u = 9.6 pom seguros.** El ADR, el digest, la metodología y el diseño del parser se mueven ahí. Capacidad total ~53.6 pom. |
+| **v13.1** | **30 jul 2026** | Día 4 cerrado en **10.0 pom reales** contra 8.4 (+19%). Segundo día seguido en dos dígitos; acumulado 31.4 en 4 días. **Dos slips: consolidación y lectura.** 🚨 Riesgo #6 nuevo: la lectura va **2 de 4** contra un piso de 5/7 — necesita 3 de 3 en los días que quedan, y la causa raíz es de **posición**, no de tiempo. |
+| **v13** | **30 jul 2026** | **Día 4 cerrado.** H1/H2/H3 resueltas · E03 cerrada con `adr-002` y `adr-003` · **E05 generada por la skill** (2º uso → cierra DoD de E02 fase C) · Tableau conectado con 3 hallazgos. **Bici: estudio temas 1-3.** ⬛ **Slip: el bloque de consolidación se saltó** → pasa al viernes. Patrón de la semana: **prerrequisito no verificado, 2 de 2 veces** (cask el lunes, driver hoy). Temas 4-10 del estudio se reparten vie/sáb; **el examen se hace el domingo.** |
 | **v12.3** | **30 jul 2026** | Bloque 2 marcado: **E03 cerrada** con `adr-002`, `adr-003`, modelo v3 y E05 generada. Alineada la numeración de bloques entre `semana-01.md` y `dias/jueves-30-jul.md`, que habían divergido. **Bloque 3 (consolidación) sigue pendiente** y no estaba en la lista de faltantes. |
 | **v12.2** | **30 jul 2026** | **E06 fase A cerrada: 50 min reales contra 35 estimados (+43%).** Causa: el driver JDBC, prerrequisito no verificado — **segunda vez esta semana** (la primera fue el cask de OpenSuperWhisper el lunes). Va a la retro. Tres hallazgos reales sobre Greenstone. **El ejercicio del viernes cambió:** Load Times 2.0 vive en Luzmo, así que se reproducen cifras y se comparan herramientas, no se replica un diseño. El drill de Workout Wednesday se mueve a S2. |
 | **v12.1** | **30 jul 2026** | **Tableau conectado a Greenstone (plan A).** Hallazgo: **Tableau Desktop en Mac usa JDBC, no ODBC** — el `.jar` va en `~/Library/Tableau/Drivers`. El mensaje de error lo decía desde el principio ("or the URL is incorrect" es vocabulario de Java) y se leyó mal. **D6 parcialmente resuelta:** la edición gratuita sí conecta; la limitante era el driver, no la licencia. Dos lecciones nuevas y deuda técnica registrada, incluida una credencial de producción que hay que rotar. |
